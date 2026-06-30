@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <h4>S'enregistrer</h4>
+{% for message in messages %}
+    <strong>{{ message }}</strong>
+{% endfor %}
+
 <form method="post" action="/register">
     {% csrf_token %}
     <label for="username">username</label>

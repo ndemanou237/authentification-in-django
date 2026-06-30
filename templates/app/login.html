@@ -2,8 +2,12 @@
 
 {% block content %}
 
-<h4>Se connecter</h4>
-<form method="post" action="/register">
+
+<h2>Se connecter</h2>
+{% for message in messages %}
+    <strong>{{ message }}</strong>
+{% endfor %}
+<form method="post" action="/login">
     {% csrf_token %}
     <label for="username">username</label>
     <input type="text" name="username" id="username" placeholder="Enternyour username" required>
